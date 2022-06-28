@@ -1,0 +1,288 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Price Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+</head>
+
+<body>
+    <div class="main_div">
+
+        <!-- As a heading -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand mx-3" href="/">Hotel Price Predictor</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item mx-3 active">
+                        <a class="nav-link" href="/hotel">Hotels <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="/SearchFlights">SearchFlights</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="/developerinfo">Devloper</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 mx-3 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    
+        <div class="info_div">
+            <div class="left_div">
+                <img src="/static/img3.png"/>
+            </div>
+            <div class="right_div">
+                <h3>🏨 Hotel Price Prediction Using Machine Learning</h3>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nowadays Travelling has become an integral part of today’s lifestyle. The price of hotels changes very rapidly these days, and the difference is a lot. Therefore, having some basic idea of the hotel price before planning the trip will surely help many people save money. Therefore we are going to develop Web-Application which will predict the price of Hotels using machine learning algorithm that will help user to book these Hotels in cheap prices.You can use this Web-App for Price Prediction Of Hotel prices for Free !!</p>
+                <div class="opeartions">
+                    <button class="btn btn-primary">Predict price</button>
+                    <button class="btn btn-warning mx-3">Contact Us</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-5 main_form">
+            <form action="\predict2" method="post">   
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h5 class="card-title">City Name</h5>
+                                <select name="city" required>
+                                    <option value="CityName_Ahmedabad">Ahemdabad</option>
+                                    <option value="CityName_Bangalore">Banglore</option>
+                                    <option value="CityName_Chennai">Chennai</option>
+                                    <option value="CityName_Delhi">Delhi</option>
+                                    <option value="CityName_Goa">Gos</option>
+                                    <option value="CityName_Hyderabad">Hydrabad</option>
+                                    <option value="CityName_Jaipur">Jaipur</option>
+                                    <option value="CityName_Kochi">Kochi</option>
+                                    <option value="CityName_Kolkata">Kolkata</option>
+                                    <option value="CityName_Mumbai" selected>Mumbai</option>
+                                    <option value="CityName_Pune">Pune</option>
+                                    <option value="CityName_Udaipur">Udaipur</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Is Hotel Luxury</h5>
+                                <select name="luxury" id="luxury" required="required">
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>     
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Check In Date</h5>
+                                <!-- Departure -->
+                                <input type="datetime-local" name="Check_In" id="Check_In" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="col-sm-6">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Check Out Date</h5>
+                                <!-- Departure -->
+                                <input type="datetime-local" name="Check_Out" id="Check_Out" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <br>
+                <br>
+                <br>
+                
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Is Tourist Destination</h5>
+                                <select name="touristDestination" id="touristDestination" required="required">
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Star Ratings</h5>
+                                <!-- Destination -->
+                                <select name="ratings" id="ratings" required="required">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                <br>
+                <br>
+                <br>
+                
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Is Free Wifi</h5>
+                                <select name="freeWifi" id="FreeWifi" required="required">
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Is Free Breakfast</h5>
+                                <select name="freebreakfast" id="Freebreakfast" required="required">
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Hotel Capacity</h5>
+                                <input type="text" name="capacity" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Has Swimming Pool</h5>
+                                <select name="Swimmingpool" id="Swimmingpool" required="required">
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Hotel Type</h5>
+                                <select name="hotel_type" id="hotel_type" required="required">
+                                    <option value="OYO Hotels">OYO Hotels</option>
+                                    <option value="Taj Hotels">Taj Hotels</option>
+                                    <option value="Garden Hotels">Garden Hotels</option>
+                                    <option value="Other Than Above">Other Than Above</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Is Metro City</h5>
+                                <!-- Arrival -->
+                                <select name="metrocity" id="Metrocity" required="required">
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <!-- Submit -->
+                <input type="submit" value="Submit" class="btn btn-success w-100">
+            </form>
+            <br>
+            <h3>{{ prediction_text }}</h3>
+            <br>   
+        </div>
+
+        <footer>
+            <p>Created By Technical SKS ©2020-2021</p>
+        </footer>
+    
+    </div>
+    
+    
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

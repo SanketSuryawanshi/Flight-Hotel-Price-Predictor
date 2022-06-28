@@ -1,0 +1,112 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Price Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+
+<body>
+    <div class="main_div">
+
+         <!-- As a heading -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand mx-3" href="/">Flight Price Predictor</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="/hotel">Hotels <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="/SearchFlights">SearchFlights</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="/developerinfo">Devloper</a>
+                    </li>
+                    <li class="nav-item mx-3 active">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 mx-3 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+       <div class="contact_div">
+            <h2>Contact Us</h2>
+            <div class="form_div">
+                <form name="Form1" action="/contact" method="post">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><i class="fa fa-user mx-3" aria-hidden="true"></i>Full Name :</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Full Name" name="FullName">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><i class="fa fa-envelope mx-3" aria-hidden="true"></i>Email Address :</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Valid Email ID" name="EmailID">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1"><i class="fa fa-comment mx-3" aria-hidden="true"></i>Enter Your Message :</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="How Can I Help You ?" name="Message"></textarea>
+                    </div>
+                    <input type="submit" onclick="SubmitForm()" class="btn btn-success w-100"></button>
+                </form>
+            </div>
+            <img src="/static/contact.png" id="ContactImage"/>
+       </div>
+        <footer>
+            <p>Created By Technical SKS ©2020-2021</p>
+        </footer>
+    </div>
+    
+    
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    
+    <script>
+        function SubmitForm(e){
+            let name = document.forms["Form1"]["FullName"].value;
+            let emailid = document.forms["Form1"]["EmailID"].value;
+            let msg = document.forms["Form1"]["Message"].value;
+            if(name=="" || emailid=="" || msg==""){
+                swal("Error !", "All Fields are Required !!", "error");
+            }
+            else{
+                swal("Good job!", "Form Submitted Succesfully !!", "success");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
